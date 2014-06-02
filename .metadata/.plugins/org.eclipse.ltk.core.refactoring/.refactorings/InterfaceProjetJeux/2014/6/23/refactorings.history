@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 3 elements to &apos;InterfaceProjetJeux/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;InterfaceProjetJeux&apos;&#x0D;&#x0A;- Destination element: &apos;InterfaceProjetJeux/src/(default package)&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     gestion.Fenetre2.java&#x0D;&#x0A;     gestion.ModelTable.java&#x0D;&#x0A;     gestion.ListeClient.java&#x0D;&#x0A;- Update references to refactored element" description="Move compilation units" destination="/src&lt;" element1="/src&lt;gestion{Fenetre2.java" element2="/src&lt;gestion{ModelTable.java" element3="/src&lt;gestion{ListeClient.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1401700471391" units="3" version="1.0"/>
+</session>

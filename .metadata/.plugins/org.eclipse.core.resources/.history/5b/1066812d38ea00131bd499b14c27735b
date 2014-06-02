@@ -1,0 +1,55 @@
+
+public class Jeux {
+
+	private int IdJeux;
+	private String nom;
+	private String numserie;
+	private int prix;
+	private String description;
+	
+	public Jeux(){
+		
+	}
+
+	public int getIdJeux() {
+		return IdJeux;
+	}
+
+	public void setIdJeux(int idJeux) {
+		IdJeux = idJeux;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getNumserie() {
+		return numserie;
+	}
+
+	public void setNumserie(String numserie) {
+		this.numserie = numserie;
+	}
+
+	public int getPrix() {
+		return prix;
+	}
+
+	public void setPrix(int string) {
+		this.prix = string;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	
+}

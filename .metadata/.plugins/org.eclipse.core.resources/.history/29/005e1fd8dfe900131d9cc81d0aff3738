@@ -1,0 +1,81 @@
+package teste;
+import pojo.*;
+import java.util.Date;
+
+//import javax.xml.soap.Detail;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import pojo.Client;
+import pojo.Detail;
+import pojo.DetailId;
+import pojo.Facture;
+import pojo.Produit;
+
+public class TesterHibernateUtil3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Session session = null;
+		session = HibernateUtil.instance().openSession();
+		
+		Transaction tx = null;
+		try{
+			tx = session.beginTransaction(); //commencer la transaction
+			// les opérations avec Hibernate
+			Client client =(Client) session.get(Client.class, new Integer(16));
+			Produit produit=(Produit) session.get(Produit.class, new Integer(3));
+			// créer une facture 
+			Facture facture = new Facture();
+			facture.setClient(client);
+			facture.setDateFacturation(new Date());
+			facture.setModePaiement('c');
+			facture.setMontantTotal(0.00);
+			facture.setNrFacture("554481556");
+			facture.setPayer((byte) 0);
+			facture.setTauxTva(0.21f);
+			facture.setTypeAchat('c');
+			session.persist(facture);
+			
+			
+			
+			// Modifier la classe DetailID et detail
+			Detail detail =  new Detail();
+			produit.decrementerProduit(detail.getQuantite());
+			//
+			DetailId detailId = new DetailId();
+			detailId.setIdProduit(produit.getIdProduit());
+			detailId.setIdFacture(facture.getIdFacture());
+			
+			detail.setId(detailId);
+			detail.setQuantite(5);
+			detail.setProduit(produit);
+			detail.setFacture(facture);
+			detail.setPrixHtva(produit.getPrixHtva());
+			
+			
+			
+			facture.getDetails().add(detail);
+			
+			double montantTotal = 0.00;
+			 for(Detail d: facture.getDetails()){
+				 montantTotal += (d.getPrixHtva() * d.getQuantite()* ( 1+ facture.getTauxTva()));
+			 }
+			
+			tx.commit();
+			System.out.println("pas de problème de mapping");
+		}
+		catch (HibernateException e) {
+			if (tx!=null) tx.rollback();
+			e.printStackTrace(); 
+		}
+		finally {
+			session.close(); 
+		}
+		
+	}
+
+}

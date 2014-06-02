@@ -1,0 +1,48 @@
+package teste;
+import java.util.Date;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import pojo.Adresse;
+import pojo.Categorie;
+import pojo.Client;
+import pojo.Pays;
+import pojo.Personne;
+import pojo.Produit;
+
+
+public class TesterHibernateUtil2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Session session = null;
+		session = HibernateUtil.instance().openSession();
+		
+		Transaction tx = null;
+		try{
+			tx = session.beginTransaction(); //commencer la transaction
+			// les opérations avec Hibernate
+			Categorie categorie = new Categorie("Ecran Dell");
+			session.persist(categorie);
+			
+			Produit produit = new Produit(categorie,"hp","154",198.99f,"Ecrant powa","paf",1,'f');
+			session.persist(produit);
+			
+			
+			tx.commit();
+			System.out.println("pas de problème de mapping");
+		}
+		catch (HibernateException e) {
+			if (tx!=null) tx.rollback();
+			e.printStackTrace(); 
+		}
+		finally {
+			session.close(); 
+		}
+		
+	}
+
+}

@@ -1,0 +1,12 @@
+window_sizes 1366 705 202 1158 512 82
+diagrams
+  active  classdiagram_ref 128002 // diag1
+    1158 547 100 4 0 0
+end
+show_stereotypes
+selected classview_ref 128002 // game
+open
+  classview_ref 128002 // game
+  deploymentview_ref 128002 // depli
+end
+end

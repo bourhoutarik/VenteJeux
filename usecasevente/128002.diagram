@@ -1,0 +1,62 @@
+format 76
+
+classcanvas 128002 class_ref 128002 // client
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 32 71 2000
+end
+classcanvas 128130 class_ref 128130 // vendeur
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 26 284 2000
+end
+usecasecanvas 130434 usecase_ref 135298 // ajouter article
+  xyzwh 109 360 3005 64 32 label_xy 109 392
+end
+usecasecanvas 130562 usecase_ref 135426 // edition fournisseur
+  xyzwh 168 280 3005 64 32 label_xy 155 312
+end
+usecasecanvas 130690 usecase_ref 135554 // affichage inventaire
+  xyzwh 122 204 3005 64 32 label_xy 106 236
+end
+usecasecanvas 130818 usecase_ref 135682 // ajout fournisseur
+  xyzwh 315 327 3005 64 32 label_xy 306 359
+end
+usecasecanvas 130946 usecase_ref 135810 // impression inventaire
+  xyzwh 266 78 3005 64 32 label_xy 247 110
+end
+usecasecanvas 131074 usecase_ref 135938 // effacer un article
+  xyzwh 372 165 3005 64 32 label_xy 363 197
+end
+usecasecanvas 131202 usecase_ref 136066 // edition article
+  xyzwh 375 255 3005 64 32 label_xy 375 287
+end
+usecasecanvas 132482 usecase_ref 136194 // achat article
+  xyzwh 150 67 3005 64 32 label_xy 152 99
+end
+simplerelationcanvas 131330 simplerelation_ref 128002
+  from ref 130946 z 3006 to ref 130690
+end
+simplerelationcanvas 131458 simplerelation_ref 128130
+  from ref 131074 z 3006 to ref 130690
+end
+simplerelationcanvas 131586 simplerelation_ref 128258
+  from ref 131202 z 3006 to ref 130690
+end
+line 131714 ----
+  from ref 128130 z 3006 to ref 130690
+line 131842 ----
+  from ref 128130 z 3006 to ref 130562
+line 131970 ----
+  from ref 128130 z 3006 to ref 130434
+line 132098 --->
+  from ref 130434 z 3006 to ref 130562
+simplerelationcanvas 132226 simplerelation_ref 128386
+  from ref 130818 z 3006 to ref 130434
+end
+line 132354 ----
+  from ref 128002 z 3006 to ref 130690
+simplerelationcanvas 132610 simplerelation_ref 128514
+  from ref 132482 z 3006 to ref 130690
+end
+line 132738 ----
+  from ref 128002 z 3006 to ref 132482
+end

@@ -1,0 +1,35 @@
+package snippet;
+
+public class Snippet {
+	Connection connexion=null;
+					Statement st=null;
+					String sql=null;
+					ResultSet rsKey = null;
+			        try {
+			        	lstProduit.removeAllItems();
+						connexion = DriverManager.getConnection(paramsconnexion.URL,paramsconnexion.ADMIN,paramsconnexion.PASSWORD);
+						st=connexion.createStatement();
+						
+						sql="SELECT nom FROM client ";
+						rsKey=st.executeQuery(sql); 
+					    lstProduit.addItem(rsKey.getString(0)+ ""+rsKey.getString(1)); 
+						
+						
+					} 
+			        catch (SQLException e) {
+						e.printStackTrace();
+						System.out.println("Les parametres sont incorrectes");
+						JOptionPane.showMessageDialog(null, "Parametres Incorrectes");
+					}
+			        finally{
+			        	//fermer les objets
+			        	if (st != null){
+			        		try {
+								st.close();
+							} catch (SQLException e) {
+								e.printStackTrace();
+							}
+			        	}
+			        
+}
+

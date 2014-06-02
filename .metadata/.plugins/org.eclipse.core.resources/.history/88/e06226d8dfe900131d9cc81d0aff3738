@@ -1,0 +1,50 @@
+package teste;
+import java.util.Date;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import pojo.Adresse;
+import pojo.Client;
+import pojo.Pays;
+import pojo.Personne;
+
+
+public class TesterHibernateUtil {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Session session = null;
+		session = HibernateUtil.instance().openSession();
+		
+		Transaction tx = null;
+		try{
+			tx = session.beginTransaction(); //commencer la transaction
+			// les opérations avec Hibernate
+			Pays pays = new Pays("France");
+			session.persist(pays);
+			
+			Adresse adresse = new Adresse(pays,"rue des perdues","15","7000","mons");
+			session.persist(adresse);
+			
+			Personne personne = new Personne("Colle","Bush","addremail@","telephoneNum");
+			session.persist(personne);
+			
+			Client client = new Client(personne,adresse, new Date(),'H',0.1f,"saga","BE056464666");
+			session.persist(client);
+			tx.commit();
+			System.out.println("pas de problème de mapping");
+		}
+		catch (HibernateException e) {
+			if (tx!=null) tx.rollback();
+			e.printStackTrace(); 
+		}
+		finally {
+			session.close(); 
+		}
+		
+	}
+
+}

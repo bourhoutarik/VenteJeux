@@ -1,0 +1,112 @@
+package teste;
+
+
+import java.util.Date;
+
+//import javax.xml.soap.Detail;
+
+
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import pojo.Categorie;
+import pojo.Composite;
+import pojo.Client;
+import pojo.CompositeId;
+import pojo.Detail;
+import pojo.DetailId;
+import pojo.Facture;
+import pojo.Produit;
+
+public class TesterHibernateUtil4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Session session = null;
+		session = HibernateUtil.instance().openSession();
+		
+		Transaction tx = null;
+		try{
+			tx = session.beginTransaction(); //commencer la transaction
+			//encoder les produits simples
+			//encoderles 2 categories
+			Categorie c1= new Categorie(" hard disk");
+			session.persist(c1);
+			
+			Categorie c2= new Categorie(" carte mere ");
+			session.persist(c2);
+			
+			Categorie c3= new Categorie(" Ecran ");
+			session.persist(c3);
+			
+			Produit ps1 = new Produit(c1,"HD1t","254",100,"Bonne qualité ","image1",100,'g');
+			session.persist(ps1);
+			
+			Produit ps2 = new Produit(c1,"MB","255",300,"Bonne qualité ","image2",100,'a');
+			session.persist(ps2);
+			
+			//cree le produit
+			
+			Produit pc1 = new Produit(c1,"Mini tower","255",0,"Bonne qualité ","image3",0,'b');
+			session.persist(pc1);
+			
+			Composite compo1 = new Composite();
+			CompositeId cpId1 = new CompositeId();
+			cpId1.setIdProduit(pc1.getIdProduit());
+			cpId1.setIdSousProduit(ps1.getIdProduit());
+			compo1.setId(cpId1);
+			compo1.setQuantite(2);
+			compo1.setProduitByIdProduit(pc1);
+			compo1.setProduitByIdSousProduit(ps1);
+			session.persist(compo1);
+			//on decremente le stock
+			//ps1.decrementerProduit(compo1.getQuantite());
+			
+			Composite compo2 = new Composite();
+			CompositeId cpId2 = new CompositeId();
+			cpId2.setIdProduit(pc1.getIdProduit());
+			cpId2.setIdSousProduit(ps2.getIdProduit());
+			compo2.setId(cpId2);
+			compo2.setQuantite(1);
+			compo2.setProduitByIdProduit(pc1);
+			compo2.setProduitByIdSousProduit(ps2);
+			session.persist(compo2);
+			//on decremente le stock
+			//ps2.decrementerProduit(compo2.getQuantite());
+			
+			// on ajoute les composites a la Set du produit
+			pc1.getCompositesForIdProduit().add(compo1);
+			pc1.getCompositesForIdSousProduit().add(compo2);
+			
+			pc1.setStock(5);
+			ps1.decrementerProduit(compo1.getQuantite()*pc1.getStock());
+			ps2.decrementerProduit(compo2.getQuantite()*pc1.getStock());
+			//Calculer le montant d'une tour
+			double montantHTVATour= 0.00;
+			for(Composite cp : pc1.getCompositesForIdSousProduit()){
+				montantHTVATour += cp.getQuantite() * cp.getProduitByIdSousProduit().getPrixHtva();
+			}
+			
+			pc1.setPrixHtva(montantHTVATour);
+			
+			
+			
+			session.flush();
+			
+			tx.commit();
+			System.out.println("pas de problème de mapping");
+		}
+		catch (HibernateException e) {
+			if (tx!=null) tx.rollback();
+			e.printStackTrace(); 
+		}
+		finally {
+			session.close(); 
+		}
+		
+	}
+
+}

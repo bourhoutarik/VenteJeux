@@ -1,0 +1,159 @@
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.awt.List;
+import javax.swing.JList;
+import java.awt.Button;
+
+
+public class FenVendeur extends JDialog {
+	private JTextField txtnom;
+	private JTextField txtnum;
+	private JTextField txtprix;
+	private JTextField txtdescrip;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			FenVendeur dialog = new FenVendeur();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public FenVendeur() {
+		setBounds(100, 100, 450, 300);
+		{
+			JPanel panel = new JPanel();
+			getContentPane().add(panel, BorderLayout.WEST);
+			GridBagLayout gbl_panel = new GridBagLayout();
+			gbl_panel.columnWidths = new int[]{46, 86, 0};
+			gbl_panel.rowHeights = new int[]{20, 0, 0, 0, 0, 0, 0, 0, 0};
+			gbl_panel.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
+			gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+			panel.setLayout(gbl_panel);
+			
+			JLabel lblNewLabel = new JLabel("Nom du jeux");
+			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+			gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
+			gbc_lblNewLabel.gridx = 0;
+			gbc_lblNewLabel.gridy = 0;
+			panel.add(lblNewLabel, gbc_lblNewLabel);
+			
+			txtnom = new JTextField();
+			GridBagConstraints gbc_txtnom = new GridBagConstraints();
+			gbc_txtnom.insets = new Insets(0, 0, 5, 0);
+			gbc_txtnom.anchor = GridBagConstraints.NORTHWEST;
+			gbc_txtnom.gridx = 1;
+			gbc_txtnom.gridy = 0;
+			panel.add(txtnom, gbc_txtnom);
+			txtnom.setColumns(10);
+			
+			JLabel lblNewLabel_1 = new JLabel("Numero de serie du jeux");
+			GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
+			gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
+			gbc_lblNewLabel_1.gridx = 0;
+			gbc_lblNewLabel_1.gridy = 1;
+			panel.add(lblNewLabel_1, gbc_lblNewLabel_1);
+			
+			txtnum = new JTextField();
+			GridBagConstraints gbc_txtnum = new GridBagConstraints();
+			gbc_txtnum.insets = new Insets(0, 0, 5, 0);
+			gbc_txtnum.fill = GridBagConstraints.HORIZONTAL;
+			gbc_txtnum.gridx = 1;
+			gbc_txtnum.gridy = 1;
+			panel.add(txtnum, gbc_txtnum);
+			txtnum.setColumns(10);
+			
+			JLabel lblNewLabel_2 = new JLabel("Prix du jeux");
+			GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
+			gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
+			gbc_lblNewLabel_2.gridx = 0;
+			gbc_lblNewLabel_2.gridy = 2;
+			panel.add(lblNewLabel_2, gbc_lblNewLabel_2);
+			
+			txtprix = new JTextField();
+			GridBagConstraints gbc_txtprix = new GridBagConstraints();
+			gbc_txtprix.insets = new Insets(0, 0, 5, 0);
+			gbc_txtprix.fill = GridBagConstraints.HORIZONTAL;
+			gbc_txtprix.gridx = 1;
+			gbc_txtprix.gridy = 2;
+			panel.add(txtprix, gbc_txtprix);
+			txtprix.setColumns(10);
+			
+			JLabel lblNewLabel_3 = new JLabel("Description");
+			GridBagConstraints gbc_lblNewLabel_3 = new GridBagConstraints();
+			gbc_lblNewLabel_3.insets = new Insets(0, 0, 5, 5);
+			gbc_lblNewLabel_3.gridx = 0;
+			gbc_lblNewLabel_3.gridy = 3;
+			panel.add(lblNewLabel_3, gbc_lblNewLabel_3);
+			
+			txtdescrip = new JTextField();
+			GridBagConstraints gbc_txtdescrip = new GridBagConstraints();
+			gbc_txtdescrip.insets = new Insets(0, 0, 5, 0);
+			gbc_txtdescrip.fill = GridBagConstraints.HORIZONTAL;
+			gbc_txtdescrip.gridx = 1;
+			gbc_txtdescrip.gridy = 3;
+			panel.add(txtdescrip, gbc_txtdescrip);
+			txtdescrip.setColumns(10);
+			
+			JButton ajouter = new JButton("Ajoutter");
+			ajouter.setBounds(285, 349, 100, 30);
+			ajouter.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
+			GridBagConstraints gbc_ajouter = new GridBagConstraints();
+			gbc_ajouter.insets = new Insets(0, 0, 5, 5);
+			gbc_ajouter.gridx = 0;
+			gbc_ajouter.gridy = 6;
+			panel.add(ajouter, gbc_ajouter);
+			
+			JButton supprimer = new JButton("Supprimer");
+			supprimer.setBounds(285, 349, 100, 30);
+			GridBagConstraints gbc_supprimer = new GridBagConstraints();
+			gbc_supprimer.insets = new Insets(0, 0, 5, 0);
+			gbc_supprimer.gridx = 1;
+			gbc_supprimer.gridy = 6;
+			panel.add(supprimer, gbc_supprimer);
+			
+			JButton effacer = new JButton("Efface Saisie");
+			effacer.setBounds(285, 349, 100, 30);
+			GridBagConstraints gbc_effacer = new GridBagConstraints();
+			gbc_effacer.insets = new Insets(0, 0, 0, 5);
+			gbc_effacer.gridx = 0;
+			gbc_effacer.gridy = 7;
+			panel.add(effacer, gbc_effacer);
+			
+			JButton quitter = new JButton("Quitter");
+			quitter.setBounds(285, 349, 100, 30);
+			GridBagConstraints gbc_quitter = new GridBagConstraints();
+			gbc_quitter.gridx = 1;
+			gbc_quitter.gridy = 7;
+			panel.add(quitter, gbc_quitter);
+		}
+		
+		JList list_2 = new JList();
+		getContentPane().add(list_2, BorderLayout.CENTER);
+	}
+
+}

@@ -1,0 +1,11 @@
+window_sizes 1366 705 104 557 535 80
+diagrams
+  active  usecasediagram_ref 128002 // vente
+    1041 547 120 4 29 0
+end
+show_stereotypes
+selected usecasediagram_ref 128002 // vente
+open
+  usecaseview_ref 128002 // case
+end
+end

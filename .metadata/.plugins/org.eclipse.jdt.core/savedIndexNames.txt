@@ -1,0 +1,27 @@
+INDEX VERSION 1.126+C:\Users\bourhou.tarik\Desktop\projet pour juin\.metadata\.plugins\org.eclipse.jdt.core
+1995173708.index
+1809810508.index
+163172794.index
+4108727661.index
+3974580528.index
+3133528496.index
+3065916431.index
+3299348053.index
+4155206848.index
+1592725719.index
+4041092966.index
+3849500859.index
+1697886153.index
+3829352129.index
+1299022128.index
+1844295689.index
+305854171.index
+413851100.index
+1498219845.index
+333603658.index
+1115467115.index
+3999720079.index
+247552333.index
+3114383350.index
+1183875289.index
+30765161.index
