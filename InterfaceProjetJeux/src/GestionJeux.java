@@ -49,6 +49,7 @@ public class GestionJeux extends JFrame {
 	private JTextField console;
 	private JTextField txtprix;
 	public static ArrayList<Jeux> listjeux;
+	private double montant =0;
 
 	/**
 	 * Launch the application.
@@ -117,17 +118,22 @@ public class GestionJeux extends JFrame {
 	            dbStatement = dbConnect.createStatement();
 	            ResultSet res = dbStatement.executeQuery(SQL);
 	            //lstProduit.addItem(new String(""));
-	            Jeux jeux = new Jeux();
+	            Jeux jeux;
 	            while (res.next()) {
-	            	//jeux.setIdJeux(res.getInt("IdJeux"));
+	            	jeux = new Jeux();
+	            	jeux.setIdJeux(res.getInt("IdJeux"));
 	            	jeux.setNom(res.getString("nom"));
 	            	//jeux.setDescription(res.getString("description"));
 	            	//jeux.setNumserie(res.getString("numserie"));
 	            	jeux.setPrix(res.getInt("prix"));
 	                lstProduit.addItem(res.getString("nom"));
+	             
+	                
 	                listjeux.add(jeux);
-
-	            }
+	                
+	                
+	                }
+	           
 	            res.close();
 	            dbConnect.close();
 	        } catch (InstantiationException ex) {
@@ -141,15 +147,10 @@ public class GestionJeux extends JFrame {
 	        }
 	        lstProduit.addItemListener(new ItemListener() {
 			   	public void itemStateChanged(ItemEvent arg0) {
-			   		int i = 0;
+			   		int id = 0;
 			   		if(lstProduit.getSelectedItem()!= null){
-			   			
-			   		do{	i++;}
-			   		while(lstProduit.getSelectedItem().toString().equalsIgnoreCase((listjeux.get(i)).getNom()) && i<listjeux.size());
-			   	
-			   		txtprix.setVisible(false);
-			   		txtprix.setText(String.valueOf((listjeux.get(i).getPrix())));
-			   		txtprix.setVisible(true);
+			   			id = lstProduit.getSelectedIndex();
+			   			txtprix.setText(String.valueOf((listjeux.get(id).getPrix())));
 			   		}
 			   	}
 			   });
@@ -231,6 +232,7 @@ public class GestionJeux extends JFrame {
 		panel_1.add(lblPrixDuJeux, gbc_lblPrixDuJeux);
 		
 		txtprix = new JTextField();
+		
 		/*Connection dbConnect11 = null;
         Statement dbStatement11 = null;
         String SQL11 = "SELECT prix FROM jeux";
@@ -276,6 +278,7 @@ public class GestionJeux extends JFrame {
 		panel_2.add(lblListesDesPrix);
 		
 		final List listjeux = new List();
+		
 		listjeux.setBounds(10, 36, 123, 264);
 		panel_2.add(listjeux);
 		
@@ -309,21 +312,25 @@ public class GestionJeux extends JFrame {
 		panel_2.add(btnEffacer);
 		
 		JButton btnAjouter = new JButton("Ajouter");
+		
 		btnAjouter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String produit,produit2;
-				Double prix,montant;
+				int prix;
+				
 				int nombre,nombreproduit;
 			
 				produit = lstProduit.getSelectedItem().toString();
 				
-				prix = Double.parseDouble(txtprix.getText());
+				prix = Integer.parseInt(txtprix.getText());
 				//nombre = Integer.parseInt(nbr.getText());
-				montant = prix ;
+				montant += prix ;
 				listjeux.add(produit);
-				listprix.add(String.valueOf(montant));
-				//nombreproduit =listjeux.getItemCount();
-				//nbr.setText(String.valueOf(nombreproduit));
+				listprix.add(String.valueOf(prix));
+				nombreproduit =listjeux.getItemCount();
+				nbr.setText(String.valueOf(nombreproduit));
+				total.setText(String.valueOf(montant));
+				System.out.println(listjeux.getItemCount());
 			}
 		});
 		btnAjouter.setBounds(10, 349, 100, 30);
