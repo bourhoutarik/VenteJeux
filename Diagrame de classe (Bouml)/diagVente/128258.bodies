@@ -1,0 +1,32 @@
+class Fournisseur
+!!!139778.java!!!	Fournisseur(in idFournis : char, inout adresse : Adresse, in nomEntreprise : String, in numTva : String)
+		this.idFournis = idFournis;
+		this.adresse = adresse;
+		this.nomEntreprise = nomEntreprise;
+		this.numTva = numTva;
+!!!139906.java!!!	Fournisseur(in idFournis : char, inout adresse : Adresse, in nomEntreprise : String, in numTva : String, inout commandes : Set<Commande>)
+		this.idFournis = idFournis;
+		this.adresse = adresse;
+		this.nomEntreprise = nomEntreprise;
+		this.numTva = numTva;
+		this.commandes = commandes;
+!!!140034.java!!!	getIdFournis() : char
+		return this.idFournis;
+!!!140162.java!!!	setIdFournis(in idFournis : char) : void
+		this.idFournis = idFournis;
+!!!140290.java!!!	getAdresse() : Adresse
+		return this.adresse;
+!!!140418.java!!!	setAdresse(inout adresse : Adresse) : void
+		this.adresse = adresse;
+!!!140546.java!!!	getNomEntreprise() : String
+		return this.nomEntreprise;
+!!!140674.java!!!	setNomEntreprise(in nomEntreprise : String) : void
+		this.nomEntreprise = nomEntreprise;
+!!!140802.java!!!	getNumTva() : String
+		return this.numTva;
+!!!140930.java!!!	setNumTva(in numTva : String) : void
+		this.numTva = numTva;
+!!!141058.java!!!	getCommandes() : Commande
+		return this.commandes;
+!!!141186.java!!!	setCommandes(inout commandes : Set<Commande>) : void
+		this.commandes = commandes;

@@ -1,0 +1,59 @@
+class Produit
+!!!141442.java!!!	Produit(in idProduit : char, in reference : long, in prixHtva : long, in tauxTva : long, in numSerie : long, in description : String)
+		this.idProduit = idProduit;
+		this.reference = reference;
+		this.prixHtva = prixHtva;
+		this.tauxTva = tauxTva;
+		this.numSerie = numSerie;
+		this.description = description;
+!!!141570.java!!!	Produit(in idProduit : char, in reference : long, in prixHtva : long, in tauxTva : long, in numSerie : long, in description : String, inout categories : Set<Categorie>, inout typeproduits : Set<Typeproduit>, inout commandes : Set<Commande>, inout factures : Set<Facture>)
+		this.idProduit = idProduit;
+		this.reference = reference;
+		this.prixHtva = prixHtva;
+		this.tauxTva = tauxTva;
+		this.numSerie = numSerie;
+		this.description = description;
+		this.categories = categories;
+		this.typeproduits = typeproduits;
+		this.commandes = commandes;
+		this.factures = factures;
+!!!141698.java!!!	getIdProduit() : char
+		return this.idProduit;
+!!!141826.java!!!	setIdProduit(in idProduit : char) : void
+		this.idProduit = idProduit;
+!!!141954.java!!!	getReference() : long
+		return this.reference;
+!!!142082.java!!!	setReference(in reference : long) : void
+		this.reference = reference;
+!!!142210.java!!!	getPrixHtva() : long
+		return this.prixHtva;
+!!!142338.java!!!	setPrixHtva(in prixHtva : long) : void
+		this.prixHtva = prixHtva;
+!!!142466.java!!!	getTauxTva() : long
+		return this.tauxTva;
+!!!142594.java!!!	setTauxTva(in tauxTva : long) : void
+		this.tauxTva = tauxTva;
+!!!142722.java!!!	getNumSerie() : long
+		return this.numSerie;
+!!!142850.java!!!	setNumSerie(in numSerie : long) : void
+		this.numSerie = numSerie;
+!!!142978.java!!!	getDescription() : String
+		return this.description;
+!!!143106.java!!!	setDescription(in description : String) : void
+		this.description = description;
+!!!143234.java!!!	getCategories() : Categorie
+		return this.categories;
+!!!143362.java!!!	setCategories(inout categories : Set<Categorie>) : void
+		this.categories = categories;
+!!!143490.java!!!	getTypeproduits() : Typeproduit
+		return this.typeproduits;
+!!!143618.java!!!	setTypeproduits(inout typeproduits : Set<Typeproduit>) : void
+		this.typeproduits = typeproduits;
+!!!143746.java!!!	getCommandes() : Commande
+		return this.commandes;
+!!!143874.java!!!	setCommandes(inout commandes : Set<Commande>) : void
+		this.commandes = commandes;
+!!!144002.java!!!	getFactures() : Facture
+		return this.factures;
+!!!144130.java!!!	setFactures(inout factures : Set<Facture>) : void
+		this.factures = factures;

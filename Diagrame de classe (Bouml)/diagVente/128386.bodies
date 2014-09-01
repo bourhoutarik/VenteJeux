@@ -1,0 +1,38 @@
+class Client
+!!!132226.java!!!	Client(in idClient : char, inout adresse : Adresse, in nom : String, in prenom : String, in telephone : long)
+		this.idClient = idClient;
+		this.adresse = adresse;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.telephone = telephone;
+!!!132354.java!!!	Client(in idClient : char, inout adresse : Adresse, in nom : String, in prenom : String, in telephone : long, inout factures : Set<Facture>)
+		this.idClient = idClient;
+		this.adresse = adresse;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.telephone = telephone;
+		this.factures = factures;
+!!!132482.java!!!	getIdClient() : char
+		return this.idClient;
+!!!132610.java!!!	setIdClient(in idClient : char) : void
+		this.idClient = idClient;
+!!!132738.java!!!	getAdresse() : Adresse
+		return this.adresse;
+!!!132866.java!!!	setAdresse(inout adresse : Adresse) : void
+		this.adresse = adresse;
+!!!132994.java!!!	getNom() : String
+		return this.nom;
+!!!133122.java!!!	setNom(in nom : String) : void
+		this.nom = nom;
+!!!133250.java!!!	getPrenom() : String
+		return this.prenom;
+!!!133378.java!!!	setPrenom(in prenom : String) : void
+		this.prenom = prenom;
+!!!133506.java!!!	getTelephone() : long
+		return this.telephone;
+!!!133634.java!!!	setTelephone(in telephone : long) : void
+		this.telephone = telephone;
+!!!133762.java!!!	getFactures() : Facture
+		return this.factures;
+!!!133890.java!!!	setFactures(inout factures : Set<Facture>) : void
+		this.factures = factures;

@@ -1,0 +1,13 @@
+window_sizes 1366 705 320 960 594 35
+diagrams
+  active  classdiagram_ref 128002 // venteclasse
+    1040 594 80 3 0 0
+end
+show_stereotypes
+selected class_ref 129154 // Typeproduit
+open
+  classview_ref 128002 // pojo
+  deploymentview_ref 128002 // pojo
+  classview_ref 128258 // venteview
+end
+end

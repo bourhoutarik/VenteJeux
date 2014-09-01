@@ -1,0 +1,32 @@
+class Vendeur
+!!!145538.java!!!	Vendeur(in idVendeur : char, in nom : String, in prenom : String, in telephone : String)
+		this.idVendeur = idVendeur;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.telephone = telephone;
+!!!145666.java!!!	Vendeur(in idVendeur : char, in nom : String, in prenom : String, in telephone : String, inout commandes : Set<Commande>)
+		this.idVendeur = idVendeur;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.telephone = telephone;
+		this.commandes = commandes;
+!!!145794.java!!!	getIdVendeur() : char
+		return this.idVendeur;
+!!!145922.java!!!	setIdVendeur(in idVendeur : char) : void
+		this.idVendeur = idVendeur;
+!!!146050.java!!!	getNom() : String
+		return this.nom;
+!!!146178.java!!!	setNom(in nom : String) : void
+		this.nom = nom;
+!!!146306.java!!!	getPrenom() : String
+		return this.prenom;
+!!!146434.java!!!	setPrenom(in prenom : String) : void
+		this.prenom = prenom;
+!!!146562.java!!!	getTelephone() : String
+		return this.telephone;
+!!!146690.java!!!	setTelephone(in telephone : String) : void
+		this.telephone = telephone;
+!!!146818.java!!!	getCommandes() : Commande
+		return this.commandes;
+!!!146946.java!!!	setCommandes(inout commandes : Set<Commande>) : void
+		this.commandes = commandes;

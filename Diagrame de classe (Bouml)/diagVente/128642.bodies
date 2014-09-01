@@ -1,0 +1,32 @@
+class Categorie
+!!!130562.java!!!	Categorie(in idCategorie : char, in nom : String, in genre : String, in pegi : int)
+		this.idCategorie = idCategorie;
+		this.nom = nom;
+		this.genre = genre;
+		this.pegi = pegi;
+!!!130690.java!!!	Categorie(in idCategorie : char, in nom : String, in genre : String, in pegi : int, inout produits : Set<Produit>)
+		this.idCategorie = idCategorie;
+		this.nom = nom;
+		this.genre = genre;
+		this.pegi = pegi;
+		this.produits = produits;
+!!!130818.java!!!	getIdCategorie() : char
+		return this.idCategorie;
+!!!130946.java!!!	setIdCategorie(in idCategorie : char) : void
+		this.idCategorie = idCategorie;
+!!!131074.java!!!	getNom() : String
+		return this.nom;
+!!!131202.java!!!	setNom(in nom : String) : void
+		this.nom = nom;
+!!!131330.java!!!	getGenre() : String
+		return this.genre;
+!!!131458.java!!!	setGenre(in genre : String) : void
+		this.genre = genre;
+!!!131586.java!!!	getPegi() : int
+		return this.pegi;
+!!!131714.java!!!	setPegi(in pegi : int) : void
+		this.pegi = pegi;
+!!!131842.java!!!	getProduits() : Produit
+		return this.produits;
+!!!131970.java!!!	setProduits(inout produits : Set<Produit>) : void
+		this.produits = produits;

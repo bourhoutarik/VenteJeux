@@ -1,0 +1,56 @@
+class Commande
+!!!134146.java!!!	Commande(in idCommande : char, inout vendeur : Vendeur, inout fournisseur : Fournisseur, in numdecommande : int, in nomduproduit : String, in constructeur : String, in nbredecommande : char, in datedecommande : char)
+		this.idCommande = idCommande;
+		this.vendeur = vendeur;
+		this.fournisseur = fournisseur;
+		this.numdecommande = numdecommande;
+		this.nomduproduit = nomduproduit;
+		this.constructeur = constructeur;
+		this.nbredecommande = nbredecommande;
+		this.datedecommande = datedecommande;
+!!!134274.java!!!	Commande(in idCommande : char, inout vendeur : Vendeur, inout fournisseur : Fournisseur, in numdecommande : int, in nomduproduit : String, in constructeur : String, in nbredecommande : char, in datedecommande : char, inout produits : Set<Produit>)
+		this.idCommande = idCommande;
+		this.vendeur = vendeur;
+		this.fournisseur = fournisseur;
+		this.numdecommande = numdecommande;
+		this.nomduproduit = nomduproduit;
+		this.constructeur = constructeur;
+		this.nbredecommande = nbredecommande;
+		this.datedecommande = datedecommande;
+		this.produits = produits;
+!!!134402.java!!!	getIdCommande() : char
+		return this.idCommande;
+!!!134530.java!!!	setIdCommande(in idCommande : char) : void
+		this.idCommande = idCommande;
+!!!134658.java!!!	getVendeur() : Vendeur
+		return this.vendeur;
+!!!134786.java!!!	setVendeur(inout vendeur : Vendeur) : void
+		this.vendeur = vendeur;
+!!!134914.java!!!	getFournisseur() : Fournisseur
+		return this.fournisseur;
+!!!135042.java!!!	setFournisseur(inout fournisseur : Fournisseur) : void
+		this.fournisseur = fournisseur;
+!!!135170.java!!!	getNumdecommande() : int
+		return this.numdecommande;
+!!!135298.java!!!	setNumdecommande(in numdecommande : int) : void
+		this.numdecommande = numdecommande;
+!!!135426.java!!!	getNomduproduit() : String
+		return this.nomduproduit;
+!!!135554.java!!!	setNomduproduit(in nomduproduit : String) : void
+		this.nomduproduit = nomduproduit;
+!!!135682.java!!!	getConstructeur() : String
+		return this.constructeur;
+!!!135810.java!!!	setConstructeur(in constructeur : String) : void
+		this.constructeur = constructeur;
+!!!135938.java!!!	getNbredecommande() : char
+		return this.nbredecommande;
+!!!136066.java!!!	setNbredecommande(in nbredecommande : char) : void
+		this.nbredecommande = nbredecommande;
+!!!136194.java!!!	getDatedecommande() : char
+		return this.datedecommande;
+!!!136322.java!!!	setDatedecommande(in datedecommande : char) : void
+		this.datedecommande = datedecommande;
+!!!136450.java!!!	getProduits() : Produit
+		return this.produits;
+!!!136578.java!!!	setProduits(inout produits : Set<Produit>) : void
+		this.produits = produits;

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="mldcorection" match-name="adresse"/>
+  <table-filter match-catalog="mldcorection" match-name="ajout_d_un_produit"/>
+  <table-filter match-catalog="mldcorection" match-name="ajout_du_produit_en_facture"/>
+  <table-filter match-catalog="mldcorection" match-name="categorie"/>
+  <table-filter match-catalog="mldcorection" match-name="client"/>
+  <table-filter match-catalog="mldcorection" match-name="commande"/>
+  <table-filter match-catalog="mldcorection" match-name="facture"/>
+  <table-filter match-catalog="mldcorection" match-name="fournisseur"/>
+  <table-filter match-catalog="mldcorection" match-name="produit"/>
+  <table-filter match-catalog="mldcorection" match-name="quantite1"/>
+  <table-filter match-catalog="mldcorection" match-name="type_de_categorie"/>
+  <table-filter match-catalog="mldcorection" match-name="typeproduit"/>
+  <table-filter match-catalog="mldcorection" match-name="vendeur"/>
+</hibernate-reverse-engineering>

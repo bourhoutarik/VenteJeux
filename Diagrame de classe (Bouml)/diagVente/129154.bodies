@@ -1,0 +1,20 @@
+class Typeproduit
+!!!144386.java!!!	Typeproduit(in idTypeproduit : char, in type : String)
+		this.idTypeproduit = idTypeproduit;
+		this.type = type;
+!!!144514.java!!!	Typeproduit(in idTypeproduit : char, in type : String, inout produits : Set<Produit>)
+		this.idTypeproduit = idTypeproduit;
+		this.type = type;
+		this.produits = produits;
+!!!144642.java!!!	getIdTypeproduit() : char
+		return this.idTypeproduit;
+!!!144770.java!!!	setIdTypeproduit(in idTypeproduit : char) : void
+		this.idTypeproduit = idTypeproduit;
+!!!144898.java!!!	getType() : String
+		return this.type;
+!!!145026.java!!!	setType(in type : String) : void
+		this.type = type;
+!!!145154.java!!!	getProduits() : Produit
+		return this.produits;
+!!!145282.java!!!	setProduits(inout produits : Set<Produit>) : void
+		this.produits = produits;

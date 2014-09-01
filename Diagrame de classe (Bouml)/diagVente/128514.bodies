@@ -1,0 +1,61 @@
+class Facture
+!!!136834.java!!!	Facture(in idFacture : char, inout client : Client, in nrFacture : long, inout dateFacturation : Date, in modePaiement : String, in typeAchat : String, in quantite : long, in nomClient : String)
+		this.idFacture = idFacture;
+		this.client = client;
+		this.nrFacture = nrFacture;
+		this.dateFacturation = dateFacturation;
+		this.modePaiement = modePaiement;
+		this.typeAchat = typeAchat;
+		this.quantite = quantite;
+		this.nomClient = nomClient;
+!!!136962.java!!!	Facture(in idFacture : char, inout client : Client, inout adresse : Adresse, in nrFacture : long, inout dateFacturation : Date, in modePaiement : String, in typeAchat : String, in quantite : long, in nomClient : String, inout produits : Set<Produit>)
+		this.idFacture = idFacture;
+		this.client = client;
+		this.adresse = adresse;
+		this.nrFacture = nrFacture;
+		this.dateFacturation = dateFacturation;
+		this.modePaiement = modePaiement;
+		this.typeAchat = typeAchat;
+		this.quantite = quantite;
+		this.nomClient = nomClient;
+		this.produits = produits;
+!!!137090.java!!!	getIdFacture() : char
+		return this.idFacture;
+!!!137218.java!!!	setIdFacture(in idFacture : char) : void
+		this.idFacture = idFacture;
+!!!137346.java!!!	getClient() : Client
+		return this.client;
+!!!137474.java!!!	setClient(inout client : Client) : void
+		this.client = client;
+!!!137602.java!!!	getAdresse() : Adresse
+		return this.adresse;
+!!!137730.java!!!	setAdresse(inout adresse : Adresse) : void
+		this.adresse = adresse;
+!!!137858.java!!!	getNrFacture() : long
+		return this.nrFacture;
+!!!137986.java!!!	setNrFacture(in nrFacture : long) : void
+		this.nrFacture = nrFacture;
+!!!138114.java!!!	getDateFacturation() : Date
+		return this.dateFacturation;
+!!!138242.java!!!	setDateFacturation(inout dateFacturation : Date) : void
+		this.dateFacturation = dateFacturation;
+!!!138370.java!!!	getModePaiement() : String
+		return this.modePaiement;
+!!!138498.java!!!	setModePaiement(in modePaiement : String) : void
+		this.modePaiement = modePaiement;
+!!!138626.java!!!	getTypeAchat() : String
+		return this.typeAchat;
+!!!138754.java!!!	setTypeAchat(in typeAchat : String) : void
+		this.typeAchat = typeAchat;
+!!!138882.java!!!	getQuantite() : long
+		return this.quantite;
+!!!139010.java!!!	setQuantite(in quantite : long) : void
+		this.quantite = quantite;
+!!!139138.java!!!	getNomClient() : String
+		return this.nomClient;
+!!!139266.java!!!	setNomClient(in nomClient : String) : void
+		this.nomClient = nomClient;
+!!!139394.java!!!	getProduits() : Produit
+		return this.produits;
+!!!139522.java!!!	setProduits(inout produits : Set<Produit>) : void
+		this.produits = produits;
